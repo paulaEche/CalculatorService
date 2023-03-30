@@ -23,8 +23,8 @@ namespace CalculatorService.Server.Services
 
             CheckOperands(operands);
 
-            double minuend = ((SubtractArguments)operands).minuend;
-            double subtrahend = ((SubtractArguments)operands).subtrahend;
+            double minuend = ((SubtractArguments)operands).Minuend;
+            double subtrahend = ((SubtractArguments)operands).Subtrahend;
 
             _logging.Information($"Minuend: {minuend} ; Subtrahend: {subtrahend}");
 

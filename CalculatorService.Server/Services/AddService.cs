@@ -48,7 +48,7 @@ namespace CalculatorService.Server.Services
                 throw new ArgumentException("Incorrect type of argument, it should be AddArguments");
             }
 
-            double[] addends = ((AddArguments)operands).addends;
+            double[] addends = ((AddArguments)operands).Addends;
 
             if (addends.Length < 2)
             {

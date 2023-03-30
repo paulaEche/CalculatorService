@@ -48,7 +48,7 @@ namespace CalculatorService.Server.Services
                 throw new ArgumentException("Incorrect type of argument, it should be MultiplyArguments");
             }
 
-            double[] factors = ((MultiplyArguments)operands).factors;
+            double[] factors = ((MultiplyArguments)operands).Factors;
 
             if (factors.Length < 2)
             {

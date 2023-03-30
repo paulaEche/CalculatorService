@@ -4,52 +4,62 @@ namespace CalculatorService.Server.Models
 {
     public class AddArguments : IOperationArguments
     {
-        public readonly double[] addends;
+        public  double[] Addends { get; set; } = Array.Empty<double>();
 
-        public AddArguments(double[] operands)
+        public AddArguments() { }
+
+        public AddArguments(double[] addends)
         {
-            this.addends = operands;
+            this.Addends = addends;
         }
     }
 
     public class SubtractArguments : IOperationArguments
     {
-        public readonly double minuend;
-        public readonly double subtrahend;
-        public SubtractArguments(double operand1, double operand2)
+        public double Minuend { get; set; }
+        public  double Subtrahend { get; set; }
+
+        public SubtractArguments() { }
+
+        public SubtractArguments(double minuend, double subtrahend)
         {
-            minuend = operand1;
-            subtrahend = operand2;
+            Minuend = minuend;
+            Subtrahend = subtrahend;
         }
     }
 
     public class MultiplyArguments : IOperationArguments
     {
-        public readonly double[] factors;
+        public double[] Factors { get; set; } = Array.Empty<double>();
 
-        public MultiplyArguments(double[] operands)
+        public MultiplyArguments() { }
+
+        public MultiplyArguments(double[] factors)
         {
-            this.factors = operands;
+            Factors = factors;
         }
     }
 
     public class DivisionArguments : IOperationArguments
     {
-        public readonly double dividend;
-        public readonly double divisor;
-        public DivisionArguments(double operand1, double operand2)
+        public double Dividend { get; set; }
+        public double Divisor { get; set; }
+
+        public DivisionArguments() { }
+
+        public DivisionArguments(double dividend, double divisor)
         {
-            dividend = operand1;
-            divisor = operand2;
+            this.Dividend = dividend;
+            this.Divisor = divisor;
         }
     }
 
     public class SquareRootArguments : IOperationArguments
     {
-        public readonly double number;
-        public SquareRootArguments(double operand)
+        public double Number { get; set; }
+        public SquareRootArguments(double number)
         {
-            number = operand;
+            this.Number = number;
         }
     }
 }

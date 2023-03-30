@@ -82,64 +82,55 @@ namespace CalculatorService.Server.Controllers
         /// <summary>
         /// Method that receives an array of doubles to return it adds up, if the track id header is passed, stores the operation in memory
         /// </summary>
-        /// <param name="addends">array of numbers to be added</param>
+        /// <param name="addArg">object with an array of numbers to be added</param>
         /// <returns>Response Object with the result, value of the sum requested or an error</returns>
         [HttpPost("Add")]
-        public ActionResult<IOperationResult> Add(double[] addends)
+        public ActionResult<IOperationResult> Add([FromBody] AddArguments addArg)
         {
-            AddArguments addArg = new(addends);
             return GetOperationResult<AddService>(addArg);
         }
 
         /// <summary>
         /// Method that receives two values to return its subtraction, if the track id header is passed, stores the operation in memory
         /// </summary>
-        /// <param name="minuend"></param>
-        /// <param name="subtrahend"></param>
+        /// <param name="subArg">object with a minuend and a subtrahend to be subtracted</param>
         /// <returns>Response Object with the result, value of the subtract requested or an error</returns>
         [HttpPost("Sub")]
-        public ActionResult<IOperationResult> Sub(double minuend, double subtrahend)
+        public ActionResult<IOperationResult> Sub([FromBody] SubtractArguments subArg)
         {
-            SubtractArguments subArg = new(minuend, subtrahend);
             return GetOperationResult<SubtractService>(subArg);
         }
 
         /// <summary>
         /// Method that receives an array of doubles to return it multiplying, if the track id header is passed, stores the operation in memory
         /// </summary>
-        /// <param name="factors">array of numbers to be multiplied</param>
+        /// <param name="multArg">object with an array of numbers to be multiplied</param>
         /// <returns>Response Object with the result, value of the multiply requested or an error</returns>
         [HttpPost("Mult")]
-        public ActionResult<IOperationResult> Multiply(double[] factors)
+        public ActionResult<IOperationResult> Multiply([FromBody] MultiplyArguments multArg)
         {
-            MultiplyArguments multArg = new(factors);
             return GetOperationResult<MultiplyService>(multArg);
-
         }
 
         /// <summary>
         /// Method that receives two values to return its division, if the track id header is passed, stores the operation in memory
         /// </summary>
-        /// <param name="dividend"></param>
-        /// <param name="divisor"></param>
+        /// <param name="divArg">object with a dividend and a divisor to be divided</param>
         /// <returns>Response Object with the result, value of the division requested or an error</returns>
         [HttpPost("Div")]
-        public ActionResult<IOperationResult> Division(double dividend, double divisor)
+        public ActionResult<IOperationResult> Division([FromBody] DivisionArguments divArg)
         {
-            DivisionArguments divArg = new(dividend, divisor);
             return GetOperationResult<DivisionService>(divArg);
-
         }
 
         /// <summary>
         /// Method that receives a value to return its square root, if the track id header is passed, stores the operation in memory
         /// </summary>
-        /// <param name="number">Number from which you want to extract the root</param>
+        /// <param name="squareArg">object with a number from which you want to extract the root</param>
         /// <returns>Response Object with the result, value of the square root requested or an error</returns>
         [HttpPost("Sqrt")]
-        public ActionResult<IOperationResult> SquareRoot(double number)
+        public ActionResult<IOperationResult> SquareRoot([FromBody] SquareRootArguments squareArg)
         {
-            SquareRootArguments squareArg = new(number);
             return GetOperationResult<SquareRootService>(squareArg);
         }
     }

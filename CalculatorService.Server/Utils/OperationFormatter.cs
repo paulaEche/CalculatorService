@@ -39,17 +39,17 @@ namespace CalculatorService.Server.Utils
         {
             return operands switch
             {
-                AddArguments => AddCalculationStr(((AddArguments)operands).addends, ((AddResult)result).Sum),
+                AddArguments => AddCalculationStr(((AddArguments)operands).Addends, ((AddResult)result).Sum),
 
-                SubtractArguments => SubCalculationStr(((SubtractArguments)operands).minuend, ((SubtractArguments)operands).subtrahend,
+                SubtractArguments => SubCalculationStr(((SubtractArguments)operands).Minuend, ((SubtractArguments)operands).Subtrahend,
                                         ((SubtractResult)result).Difference),
 
-                MultiplyArguments => MultCalculationStr(((MultiplyArguments)operands).factors, ((MultiplyResult)result).Product),
+                MultiplyArguments => MultCalculationStr(((MultiplyArguments)operands).Factors, ((MultiplyResult)result).Product),
 
-                DivisionArguments => DivCalculationStr(((DivisionArguments)operands).dividend, ((DivisionArguments)operands).divisor,
+                DivisionArguments => DivCalculationStr(((DivisionArguments)operands).Dividend, ((DivisionArguments)operands).Divisor,
                                         ((DivisionResult)result).Quotient, ((DivisionResult)result).Remainder),
 
-                SquareRootArguments => SqrtCalculationStr(((SquareRootArguments)operands).number, ((SquareRootResult)result).SquareRoot),
+                SquareRootArguments => SqrtCalculationStr(((SquareRootArguments)operands).Number, ((SquareRootResult)result).SquareRoot),
 
                 _ => String.Empty,
             };

@@ -23,8 +23,8 @@ namespace CalculatorService.Server.Services
 
             CheckOperands(operands);
 
-            double dividend = ((DivisionArguments)operands).dividend;
-            double divisor = ((DivisionArguments)operands).divisor;
+            double dividend = ((DivisionArguments)operands).Dividend;
+            double divisor = ((DivisionArguments)operands).Divisor;
 
             _logging.Information($"Dividend: {dividend} ; Divisor: {divisor}");
 

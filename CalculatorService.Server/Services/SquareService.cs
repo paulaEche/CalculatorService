@@ -48,7 +48,7 @@ namespace CalculatorService.Server.Services
                 throw new ArgumentException("Incorrect type of argument, it should be SquareArguments");
             }
 
-            double number = ((SquareRootArguments)operandsArg).number;
+            double number = ((SquareRootArguments)operandsArg).Number;
 
             if (number < 0)
             {

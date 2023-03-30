@@ -47,7 +47,7 @@ namespace CalculatorService.Test
         public void Calculator_Controller_Add()
         {
             double[] addends = new double[4] { 1, 2, 3, 4 };
-            var result = _calculatorController.Add(addends);
+            var result = _calculatorController.Add(new AddArguments(addends));
 
             Assert.NotNull(result);
             Assert.IsType<ActionResult<IOperationResult>>(result);
@@ -62,7 +62,7 @@ namespace CalculatorService.Test
         {
             double minuend = 2.5;
             double subtrahend = 1.5;
-            var result = _calculatorController.Sub(minuend, subtrahend);
+            var result = _calculatorController.Sub(new SubtractArguments(minuend, subtrahend));
 
             Assert.NotNull(result);
             Assert.IsType<ActionResult<IOperationResult>>(result);
@@ -76,8 +76,8 @@ namespace CalculatorService.Test
         [Fact]
         public void Calculator_Controller_Mult()
         {
-            double[] addends = new double[4] { 1, 2, 3, 4 };
-            var result = _calculatorController.Multiply(addends);
+            double[] factors = new double[4] { 1, 2, 3, 4 };
+            var result = _calculatorController.Multiply(new MultiplyArguments(factors));
 
             Assert.NotNull(result);
             Assert.IsType<ActionResult<IOperationResult>>(result);
@@ -92,7 +92,7 @@ namespace CalculatorService.Test
         {
             double dividend = 10;
             double divisor = 2;
-            var result = _calculatorController.Division(dividend, divisor);
+            var result = _calculatorController.Division(new DivisionArguments(dividend, divisor));
 
             Assert.NotNull(result);
             Assert.IsType<ActionResult<IOperationResult>>(result);
@@ -101,6 +101,20 @@ namespace CalculatorService.Test
             Assert.IsType<DivisionResult>(value.Value);
             Assert.Equal(5, (value.Value as DivisionResult).Quotient);
             Assert.Equal(0, (value.Value as DivisionResult).Remainder);
+        }
+
+        [Fact]
+        public void Calculator_Controller_SqrtRoot()
+        {
+            double number = 25;
+            var result = _calculatorController.SquareRoot(new SquareRootArguments(number));
+
+            Assert.NotNull(result);
+            Assert.IsType<ActionResult<IOperationResult>>(result);
+
+            var value = result.Result as OkObjectResult;
+            Assert.IsType<SquareRootResult>(value.Value);
+            Assert.Equal(5, (value.Value as SquareRootResult).SquareRoot);
         }
     }
 }
