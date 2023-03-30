@@ -113,7 +113,7 @@ namespace CalculatorService.Client
 
             var jsonObject = new
             {
-                id = GetOneValue("number").Result
+                number = GetOneValue("number").Result
             };
             await GetResult(jsonObject, apiUrl);
         }
