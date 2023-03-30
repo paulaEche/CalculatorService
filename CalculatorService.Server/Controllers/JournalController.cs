@@ -1,4 +1,5 @@
-﻿using CalculatorService.Server.Services.Interfaces;
+﻿using CalculatorService.Server.Models;
+using CalculatorService.Server.Services.Interfaces;
 using CalculatorService.Server.Utils;
 using CalculatorService.Server.Utils.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,7 @@ namespace CalculatorService.Server.Controllers
         /// <param name="id">tracking id</param>
         /// <returns>list of operations</returns>
         [HttpPost("Query")]
-        public ActionResult GetQuery(string id)
+        public ActionResult<JournalItem[]> GetQuery(string id)
         {
             if (!ModelState.IsValid)
             {

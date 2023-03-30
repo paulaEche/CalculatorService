@@ -43,7 +43,7 @@ namespace CalculatorService.Test
         {
             DivisionArguments arguments = new(10, 2.5);
             DivisionResult result = new(4, 0);
-            string expectedValue = "10 / 2,5 = 4 + 0";
+            string expectedValue = "10 / 2,5 = 4 AND remainder: 0";
 
             var value = OperationFormatter.OperationString(arguments, result);
             Assert.Equal(expectedValue, value);

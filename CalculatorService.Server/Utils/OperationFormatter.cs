@@ -22,7 +22,7 @@ namespace CalculatorService.Server.Utils
         }
         private static string DivCalculationStr(double dividend, double divisor, double quotient, double remainder)
         {
-            return $"{dividend} / {divisor} = {quotient} + {remainder}";
+            return $"{dividend} / {divisor} = {quotient} AND remainder: {remainder}";
         }
         private static string SqrtCalculationStr(double number, double result)
         {
