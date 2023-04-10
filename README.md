@@ -89,6 +89,6 @@ Anyone can test the API either from Swagger, as it is prepared from debugging, o
 
     This operation receives an object of type SquareRootArguments with Number properties to indicate the numbers to compute the squre root. It returns an object of type SquareRootResult containing aSquareRoot property with the result of the division.
 
-6. Sqrt - Square root of a numeric operand: https://localhost:7107/Query?id=
+6. Query - Query journal entries by Tracking‐Id: https://localhost:7107/Query?id=
 
     In this case the track id identifier must be indicated to retrieve the operations performed in that session.
